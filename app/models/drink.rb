@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: drinks
+#
+#  id         :integer          not null, primary key
+#  name       :text
+#  image_path :text
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Drink < ActiveRecord::Base
 
   has_many :recipe_steps

@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20140815031452) do
     t.integer  "drink_id"
     t.integer  "ingredient_id"
     t.integer  "amount"
-    t.integer  "manual_delay"
+    t.integer  "priority"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
