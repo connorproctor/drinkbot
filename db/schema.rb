@@ -14,21 +14,21 @@
 ActiveRecord::Schema.define(version: 20140815031452) do
 
   create_table "drinks", force: true do |t|
-    t.text     "name"
-    t.text     "image_path"
+    t.string   "name"
+    t.string   "image_path"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "ingredients", force: true do |t|
-    t.text     "name"
+    t.string   "name"
     t.boolean  "alcoholic"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "pumps", force: true do |t|
-    t.text     "name"
+    t.string   "name"
     t.integer  "calibration"
     t.integer  "ingredient_id"
     t.datetime "created_at"
@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 20140815031452) do
   create_table "recipe_steps", force: true do |t|
     t.integer  "drink_id"
     t.integer  "ingredient_id"
-    t.integer  "amount"
-    t.integer  "priority"
+    t.float    "amount",        limit: 24
+    t.integer  "group"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

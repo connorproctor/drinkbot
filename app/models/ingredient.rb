@@ -3,7 +3,7 @@
 # Table name: ingredients
 #
 #  id         :integer          not null, primary key
-#  name       :text
+#  name       :string(255)
 #  alcoholic  :boolean
 #  created_at :datetime
 #  updated_at :datetime

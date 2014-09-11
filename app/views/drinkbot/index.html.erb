@@ -1,0 +1,35 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class=".col-xs-12 text-center"><h1>1. Select A Drink</h1></div>
+  </div>
+
+  <div class="row">
+    <%= render partial: "drink", collection: @available_drinks, as: :drink %>
+  </div>
+
+  <div class="row text-center vertical-buffer">
+    <div class="col-xs-12 text-center"><h1>2. Pick A Size</h1></div>
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn btn-primary btn-lg">
+        <input type="radio" name="drink-size" value="2"> 2 Ounce
+      </label>
+      <label class="btn btn-primary btn-lg active">
+        <input type="radio" name="drink-size" value="5" checked> 5 Ounce
+      </label>
+      <label class="btn btn-primary btn-lg">
+        <input type="radio" name="drink-size" value="8"> 8 Ounce
+      </label>
+    </div>
+  </div>
+
+  <div class="row vertical-buffer">
+    <div class=".col-xs-12 text-center"><h1>3.</h1></div>
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <button type="button" class="btn btn-primary btn-lg btn-block" id="make-button">Make Drink!</button>
+    </div>
+  </div>
+
+</div>
+
+

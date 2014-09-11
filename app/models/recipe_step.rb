@@ -5,8 +5,8 @@
 #  id            :integer          not null, primary key
 #  drink_id      :integer
 #  ingredient_id :integer
-#  amount        :integer
-#  priority      :integer
+#  amount        :float(24)
+#  group         :integer
 #  created_at    :datetime
 #  updated_at    :datetime
 #

@@ -3,8 +3,8 @@ class CreateRecipeSteps < ActiveRecord::Migration
     create_table :recipe_steps do |t|
       t.belongs_to :drink
       t.belongs_to :ingredient
-      t.integer :amount
-      t.integer :priority
+      t.float :amount
+      t.integer :group
 
       t.timestamps
     end

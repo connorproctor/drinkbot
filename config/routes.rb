@@ -2,6 +2,14 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  root 'drinkbot#index'
+
+  post 'make_drink' => 'drinkbot#make_drink'
+
+  get 'settings' => 'drinkbot#settings'
+
+  post 'settings/update_pumps' =>  'drinkbot#update_pumps'
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

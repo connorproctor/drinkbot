@@ -1,0 +1,52 @@
+.drink-container {
+	display: inline-block;
+    position: relative;
+    background-color: blue;
+    width: 100%;
+}
+
+.drink-image {
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	background-position: center;
+	background-size: cover;
+}
+
+.selected-drink {
+	opacity: 0.75;
+}
+
+.drink-title {
+	text-align: center;
+	color: white;
+	background-color: rgba(0,0,0,0.3);
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 10px 0 10px 0;
+	font-size: 2em;
+}
+
+.drink-ingredients {
+	color: white;
+	background-color: rgba(0,0,0,0.3);
+	display: inline-block;
+	padding: 4px 8px;
+}
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+.vertical-buffer {
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.dummy {
+	padding-top: 100%;
+}

@@ -3,17 +3,20 @@
 # Table name: drinks
 #
 #  id         :integer          not null, primary key
-#  name       :text
-#  image_path :text
+#  name       :string(255)
+#  image_path :string(255)
 #  created_at :datetime
 #  updated_at :datetime
 #
 
 class Drink < ActiveRecord::Base
 
-  has_many :recipe_steps
+  has_many :recipe_steps, autosave: true
   has_many :ingredients, through: :recipe_steps
 
   validates :name, uniqueness: true, presence: true
-  validates :ingredients, presence: true
+
+  def image_path
+    "assets/drinks/#{read_attribute(:image_path)}"
+  end
 end
