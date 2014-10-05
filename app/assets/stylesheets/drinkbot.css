@@ -3,6 +3,7 @@
     position: relative;
     background-color: blue;
     width: 100%;
+    border-radius: 18px;
 }
 
 .drink-image {
@@ -13,6 +14,7 @@
     right: 0;
 	background-position: center;
 	background-size: cover;
+	border-radius: 15px;
 }
 
 .selected-drink {
@@ -22,19 +24,24 @@
 .drink-title {
 	text-align: center;
 	color: white;
-	background-color: rgba(0,0,0,0.3);
+	background-color: rgba(0,0,0,0.4);
 	position: absolute;
 	bottom: 0;
 	width: 100%;
 	padding: 10px 0 10px 0;
 	font-size: 2em;
+
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
 }
 
 .drink-ingredients {
 	color: white;
-	background-color: rgba(0,0,0,0.3);
+	background-color: rgba(0,0,0,0.4);
 	display: inline-block;
 	padding: 4px 8px;
+	border-top-left-radius: 15px;
+	border-radius: 15px;	
 }
 
 .col-centered {

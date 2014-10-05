@@ -12,26 +12,12 @@ class Arduino
     @@instance
   end
 
-  def turn_on_pump(pump)
-    puts "Turning on pump #{pump.id}"
-    @arduino.digital_write pump.name.to_i, true if @arduino
+  def turn_on(pin)
+    @arduino.digital_write pin, true if @arduino
   end
 
-  def turn_off_pump(pump)
-    puts "Turning off pump #{pump.id}"
-    @arduino.digital_write pump.name.to_i, false if @arduino
-  end
-
-  def turn_on_pumps
-    Pump.all.each do |pump|
-      turn_on_pump(pump)
-    end
-  end
-
-  def turn_off_pumps
-    Pump.all.each do |pump|
-      turn_off_pump(pump)
-    end
+  def turn_off(pin)
+    @arduino.digital_write pin, false if @arduino
   end
 
   private_class_method :new

@@ -1,7 +1,7 @@
 class DrinkbotController < ApplicationController
   
   def index
-    @available_drinks = DrinkMaker.available_drinks
+    @available_drinks = DrinkMaker.available_drinks.shuffle
   end
 
   def settings
@@ -29,6 +29,18 @@ class DrinkbotController < ApplicationController
       Pump.update(p, ingredient_id: i)
     end
     redirect_to :settings, notice: "Pumps successfully saved!"
+  end
+
+  def turn_on_pump
+    Pump.find(params[:pump_id]).turn_on
+
+    render nothing: true, status: 200
+  end
+
+  def turn_off_pump
+    Pump.find(params[:pump_id]).turn_off
+
+    render nothing: true, status: 200
   end
 
 end
