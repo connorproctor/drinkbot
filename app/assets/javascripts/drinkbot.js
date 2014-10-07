@@ -37,7 +37,7 @@ function make_failure(jqXHR, textStatus, errorThrown) {
 
 $(document).ready(function() {
     $('.btn').button();
-    $(".alert").alert();
+    $('.alert').alert();
 });
 
 // Settings stuff, TODO: Move
@@ -47,7 +47,7 @@ $(document).ready(function() {
         $.post("turn_on_pump", {pump_id: pumpId});
         $(document).bind('mouseup.pumpPrimer', function() {
             $.post("turn_off_pump", {pump_id: pumpId});
-            $(document).unbind('click.pumpPrimer');
+            $(document).unbind('mouseup.pumpPrimer');
         });
     });
 });

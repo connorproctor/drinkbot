@@ -22,6 +22,7 @@ class DrinkMaker
     groups = build_groups
     groups.each_value do |group|
       pour_group(group)
+      sleep group_pour_duration(group)
     end
   end
 
