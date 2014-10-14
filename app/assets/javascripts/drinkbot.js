@@ -40,14 +40,25 @@ $(document).ready(function() {
     $('.alert').alert();
 });
 
-// Settings stuff, TODO: Move
+// Settings stuff, TODO: Move somewhere else
 $(document).ready(function() {
-    $('.js-pump-primer').mousedown(function() {
-        var pumpId = $(this).data('pump-id');
+    $('.js-pump-primer').on('mousedown touchstart', primer_start)
+});
+
+function primer_start(e) {
+    e.stopPropagation();
+    var pumpId = $(this).data('pump-id');
+    if (pumpId == 'all') {
+        $.post("turn_on_all_pumps");
+        $(document).bind('mouseup.pumpPrimer', function() {
+        $.post("turn_off_all_pumps");
+        $(document).unbind('mouseup.pumpPrimer');
+    });
+    } else {
         $.post("turn_on_pump", {pump_id: pumpId});
         $(document).bind('mouseup.pumpPrimer', function() {
-            $.post("turn_off_pump", {pump_id: pumpId});
-            $(document).unbind('mouseup.pumpPrimer');
-        });
+        $.post("turn_off_pump", {pump_id: pumpId});
+        $(document).unbind('mouseup.pumpPrimer');
     });
-});
+    }
+}

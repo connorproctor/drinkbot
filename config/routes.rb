@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   post 'turn_on_pump' => 'drinkbot#turn_on_pump'
   post 'turn_off_pump' => 'drinkbot#turn_off_pump'
+  post 'turn_on_all_pumps' => 'drinkbot#turn_on_all_pumps'
+  post 'turn_off_all_pumps' => 'drinkbot#turn_off_all_pumps'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

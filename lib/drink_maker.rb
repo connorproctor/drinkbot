@@ -27,20 +27,20 @@ class DrinkMaker
   end
 
   def self.available_drinks
-  available_ingredients = []
-  Pump.all.each do |pump|
-    available_ingredients << pump.ingredient
-  end
-
-  drinks = []
-  Drink.all.each do |drink|
-    if (drink.ingredients - available_ingredients).empty?
-      drinks << drink
+    available_ingredients = []
+    Pump.all.each do |pump|
+      available_ingredients << pump.ingredient
     end
-  end
 
-  return drinks
-end
+    drinks = []
+    Drink.all.each do |drink|
+      if (drink.ingredients - available_ingredients).empty?
+        drinks << drink
+      end
+    end
+
+    return drinks
+  end
 
 private
   

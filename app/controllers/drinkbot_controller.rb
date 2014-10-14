@@ -43,4 +43,16 @@ class DrinkbotController < ApplicationController
     render nothing: true, status: 200
   end
 
+  def turn_on_all_pumps
+    Pump.turn_on_all
+
+    render nothing: true, status: 200
+  end
+
+  def turn_off_all_pumps
+    Pump.turn_off_all
+
+    render nothing: true, status: 200
+  end
+
 end

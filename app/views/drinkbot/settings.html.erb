@@ -42,6 +42,7 @@
     <% @pumps.each do |pump| %>
           <button type="button" class="btn btn-default js-pump-primer" data-pump-id=<%= pump.id %>><%= "Pump #{pump.id}" %></button>
     <% end %>
+    <button type="button" class="btn btn-default js-pump-primer" data-pump-id='all'>All Pumps</button>
   </div>
 
 <!-- ###########################   -->
