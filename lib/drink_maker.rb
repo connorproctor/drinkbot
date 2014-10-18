@@ -20,9 +20,10 @@ class DrinkMaker
 
   def make_drink
     groups = build_groups
+    group_delay = 0
     groups.each_value do |group|
-      pour_group(group)
-      sleep group_pour_duration(group)
+      pour_group(group, group_delay)
+      group_delay += group_pour_duration(group)
     end
   end
 
@@ -44,14 +45,13 @@ class DrinkMaker
 
 private
   
-  def pour_group(group)
+  def pour_group(group, delay)
     threads = []
     Thread.abort_on_exception = true
     group.each do |step|
-      # delay = group_pour_duration(group) - step_pour_duration(step)
       step.pumps.each do |pump|
         threads << Thread.new do
-          # sleep delay
+          sleep delay
           pump_milliseconds(pump, step_pour_duration(step))
           ActiveRecord::Base.connection.close
         end
